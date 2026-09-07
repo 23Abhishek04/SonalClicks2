@@ -17,31 +17,31 @@ const services: ServiceItem[] = [
     title: "Weddings",
     description:
       "The big emotions, the little details, and everything in between.",
-    image: "/services/11.jpg",
+    image: "/services/11.webp",
   },
   {
     number: "02",
     title: "Pre-Weddings",
     description: "Your story before the beginning.",
-    image: "/services/9.jpg",
+    image: "/services/9.webp",
   },
   {
     number: "03",
     title: "Maternity",
     description: "The beauty of becoming, captured with love.",
-    image: "/services/1.jpg",
+    image: "/services/1.webp",
   },
   {
     number: "04",
     title: "Baby Stories",
     description: "Little moments. Forever memories.",
-    image: "/services/4.jpg",
+    image: "/services/4.webp",
   },
   {
     number: "05",
     title: "Model Shoot",
     description: "Your image. Your identity.",
-    image: "/services/1.png",
+    image: "/services/2.webp",
   },
 ];
 

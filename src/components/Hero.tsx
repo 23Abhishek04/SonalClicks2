@@ -48,15 +48,15 @@ const categories = [
 
 const avatars = [
   {
-    src: "/images/4.jpg",
+    src: "/images/4.webp",
     alt: "Wedding couple portrait",
   },
   {
-    src: "/images/7.jpg",
+    src: "/images/7.webp",
     alt: "Maternity portrait",
   },
   {
-    src: "/images/6.jpg",
+    src: "/images/6.webp",
     alt: "Baby portrait",
   },
 ];
@@ -166,7 +166,7 @@ export default function Hero() {
         variants={imageVariants}
       >
         <Image
-          src="/images/hero.jpg"
+          src="/images/hero.webp"
           alt="Bride and groom foreheads touching at golden hour"
           fill
           priority

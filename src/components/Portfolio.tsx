@@ -15,7 +15,7 @@ interface GalleryItem {
 const gallery: GalleryItem[] = [
   {
     id: 1,
-    image: "/portfolio/1.jpg",
+    image: "/portfolio/1.webp",
     category: "WEDDINGS",
     title: "The Beginning",
     position: "center",
@@ -23,7 +23,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 2,
-    image: "/portfolio/2.jpg",
+    image: "/portfolio/2.webp",
     category: "PRE-WEDDINGS",
     title: "Before Forever",
     position: "40% center",
@@ -31,7 +31,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 3,
-    image: "/portfolio/3.jpg",
+    image: "/portfolio/3.webp",
     category: "PORTRAITS",
     title: "In The Moment",
     position: "65% center",
@@ -39,7 +39,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 4,
-    image: "/portfolio/4.jpg",
+    image: "/portfolio/4.webp",
     category: "WEDDINGS",
     title: "Pure Emotion",
     position: "30% center",
@@ -47,7 +47,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 5,
-    image: "/portfolio/5.jpg",
+    image: "/portfolio/5.webp",
     category: "MATERNITY",
     title: "Becoming",
     position: "75% center",
@@ -55,7 +55,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 6,
-    image: "/portfolio/6.jpg",
+    image: "/portfolio/12.webp",
     category: "BABY STORIES",
     title: "Little Things",
     position: "50% 25%",
@@ -63,7 +63,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 7,
-    image: "/portfolio/7.jpg",
+    image: "/portfolio/7.webp",
     category: "PORTRAITS",
     title: "Unscripted",
     position: "25% center",
@@ -71,7 +71,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 8,
-    image: "/portfolio/8.jpg",
+    image: "/portfolio/8.webp",
     category: "WEDDINGS",
     title: "Always",
     position: "70% center",
@@ -79,7 +79,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 9,
-    image: "/portfolio/9.jpg",
+    image: "/portfolio/9.webp",
     category: "PRE-WEDDINGS",
     title: "Just Us",
     position: "45% center",
@@ -87,7 +87,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 10,
-    image: "/portfolio/10.jpg",
+    image: "/portfolio/10.webp",
     category: "FASHION",
     title: "Your Story",
     position: "60% center",
@@ -95,7 +95,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 11,
-    image: "/portfolio/11.jpg",
+    image: "/portfolio/11.webp",
     category: "WEDDINGS",
     title: "Forever Begins",
     position: "35% center",
@@ -103,7 +103,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 12,
-    image: "/portfolio/12.jpg",
+    image: "/portfolio/12.webp",
     category: "MOMENTS",
     title: "In Focus",
     position: "50% center",

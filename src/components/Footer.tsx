@@ -60,7 +60,7 @@ export default function Footer() {
 
       <div className="absolute inset-0">
         <Image
-          src="/images/footer.png"
+          src="/images/footer.webp"
           alt=""
           fill
           priority={false}
