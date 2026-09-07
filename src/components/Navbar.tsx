@@ -80,10 +80,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 h-[88px] transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 h-22 transition-all duration-500 ${
         scrolled
           ? "bg-white/95 shadow-[0_2px_20px_rgba(0,0,0,0.06)] backdrop-blur-md"
-          : "bg-gradient-to-b from-black/40 to-transparent"
+          : "bg-linear-to-b from-black/40 to-transparent"
       }`}
     >
       {/* =================================
@@ -100,7 +100,7 @@ export default function Navbar() {
           href="#home"
           onClick={handleNavigation}
           aria-label="Sonal Clicks - Home"
-          className="relative flex h-[52px] w-[145px] items-center sm:w-[165px]"
+          className="relative flex h-13 w-36.25 items-center sm:w-41.25"
         >
           <Image
             src={scrolled ? "/images/logo2.png" : "/images/logo.png"}
@@ -182,7 +182,7 @@ export default function Navbar() {
           onClick={() => setOpen((value) => !value)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="relative z-[60] flex h-10 w-10 flex-col items-center justify-center gap-[6px] lg:hidden"
+          className="relative z-60 flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
         >
           <span
             className={`h-px w-6 transition-all duration-300 ${
@@ -197,7 +197,7 @@ export default function Navbar() {
           <span
             className={`h-px w-6 transition-all duration-300 ${
               open
-                ? "-translate-y-[3.5px] -rotate-45 bg-white"
+                ? "translate-y-[3.5px] -rotate-45 bg-white"
                 : scrolled
                   ? "bg-neutral-900"
                   : "bg-white"

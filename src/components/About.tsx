@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const stats = [
   {
@@ -24,11 +24,16 @@ const stats = [
 
 const images = [
   {
+    // TODO: convert to .webp — currently .jpg, likely 2-5x larger
+    // than needed for the same visual quality.
     src: "/about/1.jpg",
     alt: "Sonal Clicks photography",
     position: "center",
   },
   {
+    // TODO: convert to .webp — PNG is lossless and meant for
+    // graphics/screenshots, not photographs. This is almost
+    // certainly your largest single image file on the site.
     src: "/about/2.png",
     alt: "Wedding photography",
     position: "35% center",
@@ -68,7 +73,7 @@ export default function About() {
             TOP LABEL
         ================================================== */}
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: -25 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -89,7 +94,7 @@ export default function About() {
           <span className="hidden text-[10px] tracking-[0.3em] text-[#8b8477] md:block">
             THE PERSON · THE PROCESS · THE STORY
           </span>
-        </motion.div>
+        </m.div>
 
         {/* ==================================================
             HUGE INTRO TYPOGRAPHY
@@ -97,7 +102,7 @@ export default function About() {
 
         <div className="relative mt-10 lg:mt-14">
 
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 70 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -113,11 +118,11 @@ export default function About() {
             <span className="ml-[8vw] italic">
               A Camera.
             </span>
-          </motion.h2>
+          </m.h2>
 
           {/* Floating script */}
 
-          <motion.div
+          <m.div
             initial={{
               opacity: 0,
               rotate: -12,
@@ -140,7 +145,7 @@ export default function About() {
               <br />
               every frame
             </p>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* ==================================================
@@ -151,7 +156,7 @@ export default function About() {
 
           {/* Main image */}
 
-          <motion.div
+          <m.div
             initial={{
               opacity: 0,
               y: 80,
@@ -172,7 +177,7 @@ export default function About() {
             }}
             className="group relative h-130 w-full overflow-hidden sm:h-162.5 lg:h-180 lg:w-[62%]"
           >
-            <motion.div
+            <m.div
               className="absolute inset-0"
               whileHover={{ scale: 1.04 }}
               transition={{
@@ -191,7 +196,7 @@ export default function About() {
                   objectPosition: images[0].position,
                 }}
               />
-            </motion.div>
+            </m.div>
 
             {/* Image gradient */}
 
@@ -218,11 +223,11 @@ export default function About() {
             {/* Inner border */}
 
             <div className="pointer-events-none absolute inset-4 border border-white/20 transition-all duration-700 group-hover:inset-6 group-hover:border-white/40" />
-          </motion.div>
+          </m.div>
 
           {/* Floating secondary image */}
 
-          <motion.div
+          <m.div
             initial={{
               opacity: 0,
               x: 80,
@@ -246,7 +251,7 @@ export default function About() {
             }}
             className="group relative mt-6 ml-aut h-75 w-[72%] overflow-hidden sm:h-95 lg:absolute lg:right-[4%] lg:top-[13%] lg:mt-0 lg:h-97.5 lg:w-[31%]"
           >
-            <motion.div
+            <m.div
               className="absolute inset-0"
               whileHover={{ scale: 1.06 }}
               transition={{
@@ -263,18 +268,18 @@ export default function About() {
                   objectPosition: images[1].position,
                 }}
               />
-            </motion.div>
+            </m.div>
 
             <div className="absolute inset-0 bg-black/10 transition-colors duration-500 group-hover:bg-black/0" />
 
             <div className="absolute bottom-5 left-5 text-[9px] tracking-[0.25em] text-white">
               02 — THE MOMENTS
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Small floating image */}
 
-          <motion.div
+          <m.div
             initial={{
               opacity: 0,
               x: -40,
@@ -298,7 +303,7 @@ export default function About() {
             }}
             className="group relative mt-8 h-57.5 w-[52%] overflow-hidden sm:h-70 lg:absolute lg:bottom-12.5 lg:right-[28%] lg:mt-0 lg:h-67.5 lg:w-[21%]"
           >
-            <motion.div
+            <m.div
               className="absolute inset-0"
               whileHover={{ scale: 1.08 }}
               transition={{
@@ -315,12 +320,12 @@ export default function About() {
                   objectPosition: images[2].position,
                 }}
               />
-            </motion.div>
+            </m.div>
 
             <div className="absolute bottom-4 left-4 text-[8px] tracking-[0.25em] text-white">
               03 — DETAILS
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* ==================================================
@@ -331,7 +336,7 @@ export default function About() {
 
           {/* Left statement */}
 
-          <motion.div
+          <m.div
             variants={reveal}
             initial="hidden"
             whileInView="visible"
@@ -363,13 +368,13 @@ export default function About() {
                 →
               </span>
             </a>
-          </motion.div>
+          </m.div>
 
           {/* Right story */}
 
           <div>
 
-            <motion.div
+            <m.div
               variants={reveal}
               initial="hidden"
               whileInView="visible"
@@ -379,9 +384,9 @@ export default function About() {
                 Sonal Clicks began with a simple belief — photographs should
                 feel as beautiful as the memories they preserve.
               </p>
-            </motion.div>
+            </m.div>
 
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -396,11 +401,11 @@ export default function About() {
               observation and an eye for the little details. The goal isn't
               simply to create beautiful images — it's to create photographs
               that still mean something years from now.
-            </motion.p>
+            </m.p>
 
             {/* Signature */}
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -419,7 +424,7 @@ export default function About() {
               <span className="text-[9px] tracking-[0.25em] text-[#6b6459]">
                 FOUNDER & PHOTOGRAPHER
               </span>
-            </motion.div>
+            </m.div>
           </div>
         </div>
 

@@ -356,7 +356,7 @@ export default function Testimonial() {
                 </div>
 
                 {/* image */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                <div className="relative aspect-4/5 w-full overflow-hidden">
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={current.postImage}

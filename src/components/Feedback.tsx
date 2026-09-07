@@ -1,9 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
+// NOTE: all photo URLs below are picsum.photos placeholders for
+// development. Before shipping, replace with real client photos —
+// ideally hosted locally in /public like every other image on this
+// site, so they get next/image optimization automatically instead
+// of the raw <img> tags currently used throughout this file.
 
 type Card = {
   quote: string;
@@ -156,7 +161,7 @@ export default function Feedback() {
 
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         {/* ---------------- header ---------------- */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -183,7 +188,7 @@ export default function Feedback() {
           </div>
 
           <div className="flex items-start justify-between gap-10 lg:gap-16">
-            <div className="max-w-[15rem]">
+            <div className="max-w-60">
               <p className="text-[#4A443C] sm:text-lg">
                 Every story we capture is special, but what means the most is
                 the love we receive in return.
@@ -205,24 +210,26 @@ export default function Feedback() {
               Always
             </p>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* ---------------- card strip ---------------- */}
-        <div className="flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] lg:gap-0 lg:overflow-visible [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none [-ms-overflow-style:none] lg:gap-0 lg:overflow-visible [&::-webkit-scrollbar]:hidden">
           {/* left bookend photo */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="group relative h-[26rem] w-40 shrink-0 snap-start overflow-hidden rounded-2xl sm:h-[28rem] sm:w-48 lg:h-auto lg:w-[13%] lg:rounded-none lg:rounded-l-2xl"
+            className="group relative h-104 w-40 shrink-0 snap-start overflow-hidden rounded-2xl sm:h-11 sm:w-48 lg:h-auto lg:w-[13%] lg:rounded-none lg:rounded-l-2xl"
           >
             <img
               src="https://picsum.photos/seed/fb-bloom-left/500/900"
               alt=""
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
             <div className="absolute bottom-5 left-4 right-4 text-white">
               <p className="text-[11px] uppercase leading-snug tracking-[0.15em]">
                 Beautiful
@@ -235,11 +242,11 @@ export default function Feedback() {
               </p>
               <span className="mt-3 block h-px w-6 bg-white/60" />
             </div>
-          </motion.div>
+          </m.div>
 
           {/* quote cards */}
           <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
+            <m.div
               key={page}
               custom={direction}
               initial={{ opacity: 0, x: direction >= 0 ? 40 : -40 }}
@@ -249,7 +256,7 @@ export default function Feedback() {
               className="contents"
             >
               {cards.map((card, i) => (
-                <motion.div
+                <m.div
                   key={card.name}
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -277,6 +284,8 @@ export default function Feedback() {
                       <img
                         src={card.photo}
                         alt={card.name}
+                        loading="lazy"
+                        decoding="async"
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
@@ -290,25 +299,27 @@ export default function Feedback() {
                       <span className="mx-auto mt-3 block h-px w-6 bg-[#3A342E]/25 transition-all duration-300 group-hover:w-10" />
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
-            </motion.div>
+            </m.div>
           </AnimatePresence>
 
           {/* right bookend photo */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="group relative h-[26rem] w-40 shrink-0 snap-start overflow-hidden rounded-2xl sm:h-[28rem] sm:w-48 lg:h-auto lg:w-[13%] lg:rounded-none lg:rounded-r-2xl"
+            className="group relative h-104 w-40 shrink-0 snap-start overflow-hidden rounded-2xl sm:h-112 sm:w-48 lg:h-auto lg:w-[13%] lg:rounded-none lg:rounded-r-2xl"
           >
             <img
               src="https://picsum.photos/seed/fb-note-right/500/900"
               alt=""
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/10 to-transparent" />
             <p
               className="absolute right-4 top-8 text-right text-lg italic leading-snug text-white/90"
               style={{ fontFamily: "var(--font-script, cursive)" }}
@@ -329,7 +340,7 @@ export default function Feedback() {
               </p>
               <span className="mt-3 block h-px w-6 bg-white/60" />
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* ---------------- footer controls ---------------- */}
@@ -372,4 +383,3 @@ export default function Feedback() {
     </section>
   );
 }
-
