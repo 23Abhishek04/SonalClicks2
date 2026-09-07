@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface ServiceItem {
   number: string;
@@ -59,7 +59,7 @@ export default function Services() {
             TOP HEADER
         ========================================= */}
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -88,7 +88,7 @@ export default function Services() {
             <span className="text-[#c9c2b3]">|</span>
             <span>FOREVER</span>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* =========================================
             HEADLINE
@@ -99,7 +99,7 @@ export default function Services() {
           {/* Main heading */}
 
           <div>
-            <motion.h2
+            <m.h2
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -116,11 +116,11 @@ export default function Services() {
               <span className="italic">
                 Deserves to be Captured.
               </span>
-            </motion.h2>
+            </m.h2>
 
             {/* Description */}
 
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -133,11 +133,11 @@ export default function Services() {
             >
               From grand celebrations to the quiet in-betweens, we capture
               the moments that make your story timeless.
-            </motion.p>
+            </m.p>
 
             {/* Explore button */}
 
-            <motion.a
+            <m.a
               href="#portfolio"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -168,12 +168,12 @@ export default function Services() {
               </span>
 
               EXPLORE OUR SERVICES
-            </motion.a>
+            </m.a>
           </div>
 
           {/* Script accent */}
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -190,7 +190,7 @@ export default function Services() {
               <br />
               Photos
             </p>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* =========================================
@@ -217,7 +217,7 @@ export default function Services() {
                 PRE-WEDDINGS
             ===================================== */}
 
-            <motion.article
+            <m.article
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
@@ -237,7 +237,7 @@ export default function Services() {
                 rounded-sm
               "
             >
-              <motion.div
+              <m.div
                 className="absolute inset-0"
                 animate={{
                   scale: hovered === 1 ? 1.06 : 1,
@@ -254,7 +254,7 @@ export default function Services() {
                   sizes="25vw"
                   className="object-cover"
                 />
-              </motion.div>
+              </m.div>
 
               <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-transparent" />
 
@@ -281,14 +281,14 @@ export default function Services() {
               </div>
 
               <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/0 transition-all duration-500 group-hover:ring-white/40" />
-            </motion.article>
+            </m.article>
 
 
             {/* =====================================
                 WEDDINGS — LARGE FEATURE
             ===================================== */}
 
-            <motion.article
+            <m.article
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.15 }}
@@ -308,7 +308,7 @@ export default function Services() {
                 rounded-sm
               "
             >
-              <motion.div
+              <m.div
                 className="absolute inset-0"
                 animate={{
                   scale: hovered === 0 ? 1.045 : 1,
@@ -322,11 +322,10 @@ export default function Services() {
                   src={services[0].image}
                   alt={services[0].title}
                   fill
-                  priority
                   sizes="50vw"
                   className="object-cover"
                 />
-              </motion.div>
+              </m.div>
 
               <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-black/5" />
 
@@ -393,14 +392,14 @@ export default function Services() {
               </div>
 
               <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/0 transition-all duration-500 group-hover:ring-white/40" />
-            </motion.article>
+            </m.article>
 
 
             {/* =====================================
                 MATERNITY
             ===================================== */}
 
-            <motion.article
+            <m.article
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
@@ -420,7 +419,7 @@ export default function Services() {
                 rounded-sm
               "
             >
-              <motion.div
+              <m.div
                 className="absolute inset-0"
                 animate={{
                   scale: hovered === 2 ? 1.06 : 1,
@@ -434,7 +433,7 @@ export default function Services() {
                   sizes="25vw"
                   className="object-cover"
                 />
-              </motion.div>
+              </m.div>
 
               <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-transparent" />
 
@@ -461,14 +460,14 @@ export default function Services() {
               </div>
 
               <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/0 transition-all duration-500 group-hover:ring-white/40" />
-            </motion.article>
+            </m.article>
 
 
             {/* =====================================
                 BABY STORIES
             ===================================== */}
 
-            <motion.article
+            <m.article
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
@@ -488,7 +487,7 @@ export default function Services() {
                 rounded-sm
               "
             >
-              <motion.div
+              <m.div
                 className="absolute inset-0"
                 animate={{
                   scale: hovered === 3 ? 1.06 : 1,
@@ -502,7 +501,7 @@ export default function Services() {
                   sizes="25vw"
                   className="object-cover"
                 />
-              </motion.div>
+              </m.div>
 
               <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-transparent" />
 
@@ -529,14 +528,14 @@ export default function Services() {
               </div>
 
               <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/0 transition-all duration-500 group-hover:ring-white/40" />
-            </motion.article>
+            </m.article>
 
 
             {/* =====================================
                 PORTRAITS & FASHION
             ===================================== */}
 
-            <motion.article
+            <m.article
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
@@ -556,7 +555,7 @@ export default function Services() {
                 rounded-sm
               "
             >
-              <motion.div
+              <m.div
                 className="absolute inset-0"
                 animate={{
                   scale: hovered === 4 ? 1.06 : 1,
@@ -570,7 +569,7 @@ export default function Services() {
                   sizes="25vw"
                   className="object-cover"
                 />
-              </motion.div>
+              </m.div>
 
               <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/25 to-transparent" />
 
@@ -597,7 +596,7 @@ export default function Services() {
               </div>
 
               <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/0 transition-all duration-500 group-hover:ring-white/40" />
-            </motion.article>
+            </m.article>
 
           </div>
 
@@ -610,7 +609,7 @@ export default function Services() {
 
             {/* Weddings */}
 
-            <motion.article
+            <m.article
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -618,7 +617,7 @@ export default function Services() {
               onMouseEnter={() => setHovered(0)}
               onMouseLeave={() => setHovered(null)}
             >
-              <motion.div
+              <m.div
                 className="absolute inset-0"
                 animate={{
                   scale: hovered === 0 ? 1.04 : 1,
@@ -629,11 +628,10 @@ export default function Services() {
                   src={services[0].image}
                   alt={services[0].title}
                   fill
-                  priority
                   sizes="100vw"
                   className="object-cover"
                 />
-              </motion.div>
+              </m.div>
 
               <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
 
@@ -658,7 +656,7 @@ export default function Services() {
                   VIEW WEDDING STORIES →
                 </div>
               </div>
-            </motion.article>
+            </m.article>
 
 
             {/* Other Services */}
@@ -667,7 +665,7 @@ export default function Services() {
               const realIndex = index + 1;
 
               return (
-                <motion.article
+                <m.article
                   key={service.number}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -680,7 +678,7 @@ export default function Services() {
                   onMouseLeave={() => setHovered(null)}
                   className="group relative min-h-90 overflow-hidden rounded-sm"
                 >
-                  <motion.div
+                  <m.div
                     className="absolute inset-0"
                     animate={{
                       scale: hovered === realIndex ? 1.05 : 1,
@@ -694,7 +692,7 @@ export default function Services() {
                       sizes="50vw"
                       className="object-cover"
                     />
-                  </motion.div>
+                  </m.div>
 
                   <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-transparent" />
 
@@ -715,7 +713,7 @@ export default function Services() {
                       VIEW DETAILS →
                     </div>
                   </div>
-                </motion.article>
+                </m.article>
               );
             })}
           </div>
@@ -728,7 +726,7 @@ export default function Services() {
           <div className="flex flex-col gap-3 md:hidden">
 
             {services.map((service, index) => (
-              <motion.article
+              <m.article
                 key={service.number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -754,7 +752,7 @@ export default function Services() {
 
                 {/* Image */}
 
-                <motion.div
+                <m.div
                   className="absolute inset-0"
                   animate={{
                     scale: hovered === index ? 1.04 : 1,
@@ -768,7 +766,7 @@ export default function Services() {
                     sizes="100vw"
                     className="object-cover"
                   />
-                </motion.div>
+                </m.div>
 
                 {/* Overlay */}
 
@@ -804,7 +802,7 @@ export default function Services() {
 
                 <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/0 transition-all duration-500 group-hover:ring-white/40" />
 
-              </motion.article>
+              </m.article>
             ))}
 
           </div>
@@ -816,7 +814,7 @@ export default function Services() {
             BOTTOM EDITORIAL STRIP
         ========================================= */}
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -872,7 +870,7 @@ export default function Services() {
 
           </a>
 
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import {
-  motion,
+  m,
   useReducedMotion,
   type Variants,
 } from "framer-motion";
@@ -79,7 +79,7 @@ export default function Footer() {
 
       <div className="relative border-b border-white/15 bg-[#f2efe8] text-[#1c1a17]">
         <div className="mx-auto flex max-w-[1600px] flex-col gap-3 px-6 py-7 sm:px-8 md:flex-row md:items-center md:justify-between md:px-12 lg:px-16">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, x: reduceMotion ? 0 : -25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -90,9 +90,9 @@ export default function Footer() {
             className="font-sans text-[10px] font-medium uppercase tracking-[0.28em] sm:text-xs"
           >
             Your story deserves to be remembered
-          </motion.span>
+          </m.span>
 
-          <motion.span
+          <m.span
             initial={{ opacity: 0, x: reduceMotion ? 0 : 25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -104,7 +104,7 @@ export default function Footer() {
             className="font-serif text-xl italic sm:text-2xl"
           >
             Let's create something timeless.
-          </motion.span>
+          </m.span>
         </div>
       </div>
 
@@ -117,7 +117,7 @@ export default function Footer() {
             BRAND
         ================================================== */}
 
-        <motion.div
+        <m.div
           variants={reveal}
           initial="hidden"
           whileInView="visible"
@@ -138,7 +138,7 @@ export default function Footer() {
             Photographs that hold onto the feeling, long after the moment has
             passed.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* =================================================
             LINK GRID
@@ -147,7 +147,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 border-t border-white/15 pt-12 sm:grid-cols-2 md:grid-cols-4 md:gap-10 lg:gap-16">
           {/* WORK */}
 
-          <motion.div
+          <m.div
             variants={reveal}
             initial="hidden"
             whileInView="visible"
@@ -165,11 +165,11 @@ export default function Footer() {
                 </FooterLink>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* STUDIO */}
 
-          <motion.div
+          <m.div
             variants={reveal}
             initial="hidden"
             whileInView="visible"
@@ -192,11 +192,11 @@ export default function Footer() {
                 </FooterLink>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* CONNECT */}
 
-          <motion.div
+          <m.div
             variants={reveal}
             initial="hidden"
             whileInView="visible"
@@ -241,11 +241,11 @@ export default function Footer() {
                 </span>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* NEWSLETTER */}
 
-          <motion.div
+          <m.div
             variants={reveal}
             initial="hidden"
             whileInView="visible"
@@ -282,14 +282,14 @@ export default function Footer() {
                 →
               </button>
             </form>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* =================================================
             LARGE THANK YOU MESSAGE
         ================================================== */}
 
-        <motion.div
+        <m.div
           variants={reveal}
           initial="hidden"
           whileInView="visible"
@@ -311,30 +311,30 @@ export default function Footer() {
             <span className="block">MOMENT</span>
           </h2>
 
-          <motion.div
-            animate={
-              reduceMotion
-                ? undefined
-                : {
-                    scale: [1, 1.08, 1],
-                  }
-            }
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#f2efe8]/20"
+          {/*
+            Fixed: this used to be a Framer Motion `animate` loop with
+            repeat: Infinity, starting the instant Footer mounted —
+            which is on every page load, whether the footer is anywhere
+            near the viewport or not. That's a JS-driven animation loop
+            running forever in the background for no visible benefit.
+
+            Replaced with a plain CSS animation. Same infinite loop
+            exists, but CSS animations are handed off to the compositor
+            thread (GPU), not the main JS thread, so they're far cheaper
+            to run — and `prefers-reduced-motion` disables it below.
+          */}
+          <div
+            className="heart-pulse absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#f2efe8]/20"
           >
             <HeartIcon />
-          </motion.div>
-        </motion.div>
+          </div>
+        </m.div>
 
         {/* =================================================
             BOTTOM BAR
         ================================================== */}
 
-        <motion.div
+        <m.div
           initial={{
             opacity: 0,
             y: reduceMotion ? 0 : 15,
@@ -368,8 +368,30 @@ export default function Footer() {
               ↑
             </span>
           </a>
-        </motion.div>
+        </m.div>
       </div>
+
+      <style jsx global>{`
+        .heart-pulse {
+          animation: heartPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes heartPulse {
+          0%,
+          100% {
+            transform: translate(-50%, -50%) scale(1);
+          }
+          50% {
+            transform: translate(-50%, -50%) scale(1.08);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .heart-pulse {
+            animation: none;
+          }
+        }
+      `}</style>
     </footer>
   );
 }

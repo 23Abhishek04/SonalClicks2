@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface GalleryItem {
   id: number;
@@ -153,7 +153,7 @@ export default function Portfolio() {
 
           {/* Small top label */}
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -165,13 +165,13 @@ export default function Portfolio() {
             </span>
 
             <span className="h-px w-12 bg-[#6b6459]/50" />
-          </motion.div>
+          </m.div>
 
           {/* Main heading */}
 
           <div className="grid gap-8 lg:grid-cols-[1fr_300px] lg:items-end">
 
-            <motion.h2
+            <m.h2
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
@@ -186,9 +186,9 @@ export default function Portfolio() {
               <span className="italic">
                 Worth Keeping.
               </span>
-            </motion.h2>
+            </m.h2>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -210,12 +210,12 @@ export default function Portfolio() {
 
                 SCROLL TO EXPLORE
               </div>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* Decorative script */}
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, rotate: -8, x: 30 }}
             whileInView={{ opacity: 1, rotate: -4, x: 0 }}
             viewport={{ once: true }}
@@ -230,14 +230,14 @@ export default function Portfolio() {
               <br />
               imperfect
             </span>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* ==================================================
             FEATURED INTRO LINE
         ================================================== */}
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
           viewport={{ once: true }}
@@ -262,7 +262,7 @@ export default function Portfolio() {
             EDITORIAL GALLERY
         ================================================== */}
 
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -352,14 +352,14 @@ export default function Portfolio() {
             }
 
             return (
-              <motion.article
+              <m.article
                 key={item.id}
                 variants={itemVariants}
                 className={`group relative min-h-107.5 overflow-hidden bg-[#ddd8ce] sm:min-h-125 lg:min-h-0 ${layout}`}
               >
                 {/* Image */}
 
-                <motion.div
+                <m.div
                   className="absolute inset-0"
                   whileHover={{
                     scale: 1.045,
@@ -382,9 +382,13 @@ export default function Portfolio() {
                     style={{
                       objectPosition: item.position,
                     }}
-                    loading={index === 0 ? "eager" : "lazy"}
+                    // No eager/priority override here — this section is
+                    // below Hero, Services, and About, so every image
+                    // stays on next/image's default lazy loading and
+                    // doesn't compete with the real LCP image for
+                    // early bandwidth.
                   />
-                </motion.div>
+                </m.div>
 
                 {/* Dark hover gradient */}
 
@@ -433,7 +437,7 @@ export default function Portfolio() {
 
                 <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
 
-                  <motion.div
+                  <m.div
                     initial={{ y: 15, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
@@ -472,7 +476,7 @@ export default function Portfolio() {
                         ↗
                       </span>
                     </div>
-                  </motion.div>
+                  </m.div>
                 </div>
 
                 {/* Border */}
@@ -489,10 +493,10 @@ export default function Portfolio() {
                     group-hover:border-white/30
                   "
                 />
-              </motion.article>
+              </m.article>
             );
           })}
-        </motion.div>
+        </m.div>
 
       
       </div>
