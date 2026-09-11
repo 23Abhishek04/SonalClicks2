@@ -7,32 +7,42 @@ import {
   type Variants,
 } from "framer-motion";
 
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
 const workLinks = [
-  { label: "Weddings", href: "#services" },
-  { label: "Pre-Weddings", href: "#services" },
-  { label: "Maternity", href: "#services" },
-  { label: "Baby Stories", href: "#services" },
-  { label: "Portraits & Fashion", href: "#services" },
-  { label: "Films", href: "#portfolio" },
+  { label: "Weddings", href: "/#services" },
+  { label: "Pre-Weddings", href: "/#services" },
+  { label: "Maternity", href: "/#services" },
+  { label: "Baby Stories", href: "/#services" },
+  { label: "Portraits & Fashion", href: "/#services" },
+  { label: "Films", href: "/#portfolio" },
 ];
 
 const studioLinks = [
-  { label: "About", href: "#about" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "The Experience", href: "#about" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Blog / Journal", href: "#portfolio" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "The Experience", href: "/about" },
+  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Blog / Journal", href: "/#portfolio" },
+  { label: "Contact", href: "/#contact" },
 ];
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 export default function Footer() {
   const reduceMotion = useReducedMotion();
 
-  /*
-   * Explicitly typing the variants is important.
-   * Without `Variants`, TypeScript can infer `ease`
-   * as a generic string and Framer Motion rejects it.
-   */
+  /* -------------------------------------------------------
+     SHARED REVEAL ANIMATION
+
+     Explicit `Variants` typing prevents Framer Motion
+     TypeScript easing errors.
+  ------------------------------------------------------- */
+
   const reveal: Variants = {
     hidden: {
       opacity: 0,
@@ -55,7 +65,7 @@ export default function Footer() {
       className="relative overflow-hidden bg-[#1c1a17] text-[#f2efe8]"
     >
       {/* =====================================================
-          BACKGROUND IMAGE
+          BACKGROUND
       ====================================================== */}
 
       <div className="absolute inset-0">
@@ -68,9 +78,11 @@ export default function Footer() {
           className="object-cover object-center"
         />
 
+        {/* Main dark overlay */}
         <div className="absolute inset-0 bg-[#141310]/80" />
 
-        <div className="absolute inset-0 bg-linear-to-b from-[#141310]/40 via-[#141310]/70 to-[#141310]/95" />
+        {/* Cinematic gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#141310]/40 via-[#141310]/70 to-[#141310]/95" />
       </div>
 
       {/* =====================================================
@@ -79,10 +91,21 @@ export default function Footer() {
 
       <div className="relative border-b border-white/15 bg-[#f2efe8] text-[#1c1a17]">
         <div className="mx-auto flex max-w-[1600px] flex-col gap-3 px-6 py-7 sm:px-8 md:flex-row md:items-center md:justify-between md:px-12 lg:px-16">
+          {/* Left statement */}
+
           <m.span
-            initial={{ opacity: 0, x: reduceMotion ? 0 : -25 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            initial={{
+              opacity: 0,
+              x: reduceMotion ? 0 : -25,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
             transition={{
               duration: reduceMotion ? 0 : 0.8,
               ease: "easeOut",
@@ -92,10 +115,21 @@ export default function Footer() {
             Your story deserves to be remembered
           </m.span>
 
+          {/* Right statement */}
+
           <m.span
-            initial={{ opacity: 0, x: reduceMotion ? 0 : 25 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            initial={{
+              opacity: 0,
+              x: reduceMotion ? 0 : 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
             transition={{
               duration: reduceMotion ? 0 : 0.8,
               delay: reduceMotion ? 0 : 0.1,
@@ -103,13 +137,13 @@ export default function Footer() {
             }}
             className="font-serif text-xl italic sm:text-2xl"
           >
-            Let's create something timeless.
+            Let&apos;s create something timeless.
           </m.span>
         </div>
       </div>
 
       {/* =====================================================
-          MAIN FOOTER
+          MAIN FOOTER CONTENT
       ====================================================== */}
 
       <div className="relative mx-auto max-w-[1600px] px-6 pb-10 pt-20 sm:px-8 md:px-12 md:pb-12 md:pt-28 lg:px-16 lg:pt-32">
@@ -121,10 +155,15 @@ export default function Footer() {
           variants={reveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
           className="mb-16 max-w-xl md:mb-24"
         >
-          <div className="relative mb-8 h-14 w-52.5 sm:h-16 sm:w-60">
+          {/* Logo */}
+
+          <div className="relative mb-8 h-14 w-[210px] sm:h-16 sm:w-[240px]">
             <Image
               src="/images/logo.png"
               alt="Sonal Clicks"
@@ -134,7 +173,9 @@ export default function Footer() {
             />
           </div>
 
-          <p className="max-w-md font-serif text-2xl leading-tight text-[#f2efe8]/90 sm:text-3xl md:text-4xl">
+          {/* Brand statement */}
+
+          <p className="max-w-md font-serif text-2xl leading-[1.25] text-[#f2efe8]/90 sm:text-3xl md:text-4xl">
             Photographs that hold onto the feeling, long after the moment has
             passed.
           </p>
@@ -145,13 +186,18 @@ export default function Footer() {
         ================================================== */}
 
         <div className="grid grid-cols-1 gap-12 border-t border-white/15 pt-12 sm:grid-cols-2 md:grid-cols-4 md:gap-10 lg:gap-16">
-          {/* WORK */}
+          {/* =================================================
+              WORK
+          ================================================== */}
 
           <m.div
             variants={reveal}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
           >
             <FooterHeading>Work</FooterHeading>
 
@@ -167,13 +213,18 @@ export default function Footer() {
             </div>
           </m.div>
 
-          {/* STUDIO */}
+          {/* =================================================
+              STUDIO
+          ================================================== */}
 
           <m.div
             variants={reveal}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
             transition={{
               duration: reduceMotion ? 0 : 0.8,
               delay: reduceMotion ? 0 : 0.08,
@@ -194,13 +245,18 @@ export default function Footer() {
             </div>
           </m.div>
 
-          {/* CONNECT */}
+          {/* =================================================
+              CONNECT
+          ================================================== */}
 
           <m.div
             variants={reveal}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
             transition={{
               duration: reduceMotion ? 0 : 0.8,
               delay: reduceMotion ? 0 : 0.16,
@@ -243,13 +299,18 @@ export default function Footer() {
             </div>
           </m.div>
 
-          {/* NEWSLETTER */}
+          {/* =================================================
+              NEWSLETTER
+          ================================================== */}
 
           <m.div
             variants={reveal}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
             transition={{
               duration: reduceMotion ? 0 : 0.8,
               delay: reduceMotion ? 0 : 0.24,
@@ -271,7 +332,7 @@ export default function Footer() {
                 type="email"
                 placeholder="Your email address"
                 aria-label="Your email address"
-                className="w-full border-b border-white/25 bg-transparent py-3 pr-12 text-sm text-[#f2efe8] outline-none placeholder:text-[#f2efe8]/40 transition-colors focus:border-[#f2efe8]"
+                className="w-full border-b border-white/25 bg-transparent py-3 pr-12 text-sm text-[#f2efe8] outline-none transition-colors placeholder:text-[#f2efe8]/40 focus:border-[#f2efe8]"
               />
 
               <button
@@ -286,14 +347,17 @@ export default function Footer() {
         </div>
 
         {/* =================================================
-            LARGE THANK YOU MESSAGE
+            LARGE THANK YOU
         ================================================== */}
 
         <m.div
           variants={reveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
           transition={{
             duration: reduceMotion ? 0 : 1,
             delay: reduceMotion ? 0 : 0.1,
@@ -306,28 +370,38 @@ export default function Footer() {
           </p>
 
           <h2 className="text-center font-serif text-[15vw] leading-[0.8] tracking-[-0.06em] text-[#f2efe8]/90 sm:text-[13vw] md:text-[11vw]">
-            <span className="block">KEEP</span>
-            <span className="block italic">THE</span>
-            <span className="block">MOMENT</span>
+            <span className="block">
+              KEEP
+            </span>
+
+            <span className="block italic">
+              THE
+            </span>
+
+            <span className="block">
+              MOMENT
+            </span>
           </h2>
 
-          {/*
-            Fixed: this used to be a Framer Motion `animate` loop with
-            repeat: Infinity, starting the instant Footer mounted —
-            which is on every page load, whether the footer is anywhere
-            near the viewport or not. That's a JS-driven animation loop
-            running forever in the background for no visible benefit.
+          {/* Heart */}
 
-            Replaced with a plain CSS animation. Same infinite loop
-            exists, but CSS animations are handed off to the compositor
-            thread (GPU), not the main JS thread, so they're far cheaper
-            to run — and `prefers-reduced-motion` disables it below.
-          */}
-          <div
-            className="heart-pulse absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#f2efe8]/20"
+          <m.div
+            animate={
+              reduceMotion
+                ? undefined
+                : {
+                    scale: [1, 1.08, 1],
+                  }
+            }
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#f2efe8]/20"
           >
             <HeartIcon />
-          </div>
+          </m.div>
         </m.div>
 
         {/* =================================================
@@ -343,7 +417,10 @@ export default function Footer() {
             opacity: 1,
             y: 0,
           }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
           transition={{
             duration: reduceMotion ? 0 : 0.8,
             ease: "easeOut",
@@ -355,11 +432,11 @@ export default function Footer() {
           </span>
 
           <span className="font-serif text-sm normal-case tracking-normal text-[#f2efe8]/50">
-            Made with love & photographs
+            Made with love &amp; photographs
           </span>
 
           <a
-            href="#home"
+            href="/#home"
             className="group flex items-center gap-3 transition-colors hover:text-[#f2efe8]"
           >
             Back to top
@@ -370,28 +447,6 @@ export default function Footer() {
           </a>
         </m.div>
       </div>
-
-      <style jsx global>{`
-        .heart-pulse {
-          animation: heartPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes heartPulse {
-          0%,
-          100% {
-            transform: translate(-50%, -50%) scale(1);
-          }
-          50% {
-            transform: translate(-50%, -50%) scale(1.08);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .heart-pulse {
-            animation: none;
-          }
-        }
-      `}</style>
     </footer>
   );
 }
