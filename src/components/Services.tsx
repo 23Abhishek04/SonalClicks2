@@ -65,7 +65,7 @@ export default function Services() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{
             duration: 0.7,
-            ease: [0.22, 1, 0.36, 1],
+            ease: [0.22, 1, 0.36, 1] as const,
           }}
           className="flex items-center justify-between"
         >
@@ -106,7 +106,7 @@ export default function Services() {
               transition={{
                 duration: 0.9,
                 delay: 0.1,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               className="font-serif text-[12vw] leading-[0.9] sm:text-6xl md:text-7xl lg:text-[64px] xl:text-[76px]"
             >
@@ -127,7 +127,7 @@ export default function Services() {
               transition={{
                 duration: 0.7,
                 delay: 0.25,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               className="mt-6 max-w-md text-[15px] leading-relaxed text-[#5c574d]"
             >
@@ -145,7 +145,7 @@ export default function Services() {
               transition={{
                 duration: 0.7,
                 delay: 0.35,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               className="group mt-8 inline-flex items-center gap-4 text-[11px] tracking-[0.2em] text-[#1c1a17]"
             >
@@ -224,7 +224,7 @@ export default function Services() {
               transition={{
                 duration: 0.8,
                 delay: 0.05,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               onMouseEnter={() => setHovered(1)}
               onMouseLeave={() => setHovered(null)}
@@ -244,7 +244,7 @@ export default function Services() {
                 }}
                 transition={{
                   duration: 0.7,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: [0.22, 1, 0.36, 1] as const,
                 }}
               >
                 <Image
@@ -295,7 +295,7 @@ export default function Services() {
               transition={{
                 duration: 0.9,
                 delay: 0.1,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               onMouseEnter={() => setHovered(0)}
               onMouseLeave={() => setHovered(null)}
@@ -315,7 +315,7 @@ export default function Services() {
                 }}
                 transition={{
                   duration: 0.9,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: [0.22, 1, 0.36, 1] as const,
                 }}
               >
                 <Image
@@ -406,7 +406,7 @@ export default function Services() {
               transition={{
                 duration: 0.8,
                 delay: 0.15,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               onMouseEnter={() => setHovered(2)}
               onMouseLeave={() => setHovered(null)}
@@ -474,7 +474,7 @@ export default function Services() {
               transition={{
                 duration: 0.8,
                 delay: 0.2,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               onMouseEnter={() => setHovered(3)}
               onMouseLeave={() => setHovered(null)}
@@ -542,7 +542,7 @@ export default function Services() {
               transition={{
                 duration: 0.8,
                 delay: 0.25,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               onMouseEnter={() => setHovered(4)}
               onMouseLeave={() => setHovered(null)}
@@ -737,7 +737,7 @@ export default function Services() {
                 transition={{
                   duration: 0.7,
                   delay: index * 0.06,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: [0.22, 1, 0.36, 1] as const,
                 }}
                 onMouseEnter={() => setHovered(index)}
                 onMouseLeave={() => setHovered(null)}

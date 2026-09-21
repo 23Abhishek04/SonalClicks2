@@ -216,7 +216,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{
               duration: 0.7,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [0.22, 1, 0.36, 1] as const,
             }}
             className="flex items-center justify-between"
           >
@@ -243,7 +243,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 1.1,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               className="relative z-10 max-w-6xl font-serif text-[17vw] leading-[0.78] tracking-[-0.06em] sm:text-[100px] md:text-[125px] lg:text-[150px] xl:text-[175px]"
             >
@@ -303,7 +303,7 @@ export default function AboutPage() {
               }}
               transition={{
                 duration: 1.1,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               className="group relative h-[430px] w-full overflow-hidden sm:h-[560px] md:h-[620px] lg:h-[720px] lg:w-[62%]"
             >
@@ -312,7 +312,7 @@ export default function AboutPage() {
                 whileHover={{ scale: 1.04 }}
                 transition={{
                   duration: 1,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: [0.22, 1, 0.36, 1] as const,
                 }}
               >
                 <Image
@@ -368,7 +368,7 @@ export default function AboutPage() {
               transition={{
                 duration: 1,
                 delay: 0.25,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               className="group relative mt-7 ml-auto h-[330px] w-[78%] overflow-hidden sm:h-[400px] sm:w-[70%] md:h-[460px] lg:absolute lg:right-[4%] lg:top-[13%] lg:mt-0 lg:h-[390px] lg:w-[31%]"
             >
@@ -418,7 +418,7 @@ export default function AboutPage() {
               transition={{
                 duration: 0.9,
                 delay: 0.4,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               className="group relative mt-10 h-[250px] w-[58%] overflow-hidden sm:h-[310px] sm:w-[50%] md:h-[350px] lg:absolute lg:bottom-12 lg:right-[28%] lg:mt-0 lg:h-[270px] lg:w-[21%]"
             >
@@ -617,33 +617,7 @@ export default function AboutPage() {
           BOOK CTA
       ====================================================== */}
 
-      <section className="bg-[#1c1a17] px-6 py-24 text-[#f2efe8] sm:px-10 md:px-12 lg:px-16 lg:py-32">
-        <div className="mx-auto max-w-[1200px] text-center">
-
-          <span className="mb-7 block text-[9px] tracking-[0.35em] text-white/40">
-            YOUR STORY DESERVES TO BE REMEMBERED
-          </span>
-
-          <h2 className="font-serif text-5xl leading-[0.9] tracking-[-0.04em] sm:text-7xl md:text-8xl">
-            Let&apos;s create
-            <br />
-            <span className="italic">
-              something timeless.
-            </span>
-          </h2>
-
-          <Link
-            href="/book-us"
-            className="group mt-10 inline-flex items-center gap-4 rounded-full border border-white/40 px-7 py-3.5 text-[9px] font-medium uppercase tracking-[0.25em] transition-all duration-300 hover:bg-white hover:text-[#1c1a17] sm:text-[10px]"
-          >
-            Book Your Story
-
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
-          </Link>
-        </div>
-      </section>
+     
     </main>
   );
 }

@@ -79,7 +79,7 @@ export default function About() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{
             duration: 0.7,
-            ease: [0.22, 1, 0.36, 1],
+            ease: [0.22, 1, 0.36, 1] as const,
           }}
           className="flex items-center justify-between"
         >
@@ -108,7 +108,7 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{
               duration: 1.1,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [0.22, 1, 0.36, 1] as const,
             }}
             className="relative z-10 max-w-5xl font-serif text-[17vw] leading-[0.78] tracking-tighter sm:text-[120px] lg:text-[150px] xl:text-[175px]"
           >
@@ -173,7 +173,7 @@ export default function About() {
             }}
             transition={{
               duration: 1.1,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [0.22, 1, 0.36, 1] as const,
             }}
             className="group relative h-130 w-full overflow-hidden sm:h-162.5 lg:h-180 lg:w-[62%]"
           >
@@ -182,7 +182,7 @@ export default function About() {
               whileHover={{ scale: 1.04 }}
               transition={{
                 duration: 1,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
             >
               <Image
@@ -247,7 +247,7 @@ export default function About() {
             transition={{
               duration: 1,
               delay: 0.25,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [0.22, 1, 0.36, 1] as const,
             }}
             className="group relative mt-6 ml-aut h-75 w-[72%] overflow-hidden sm:h-95 lg:absolute lg:right-[4%] lg:top-[13%] lg:mt-0 lg:h-97.5 lg:w-[31%]"
           >
@@ -299,7 +299,7 @@ export default function About() {
             transition={{
               duration: 0.9,
               delay: 0.4,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [0.22, 1, 0.36, 1] as const,
             }}
             className="group relative mt-8 h-57.5 w-[52%] overflow-hidden sm:h-70 lg:absolute lg:bottom-12.5 lg:right-[28%] lg:mt-0 lg:h-67.5 lg:w-[21%]"
           >

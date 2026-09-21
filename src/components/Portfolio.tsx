@@ -177,7 +177,7 @@ export default function Portfolio() {
               viewport={{ once: true, amount: 0.35 }}
               transition={{
                 duration: 1,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               className="max-w-4xl font-serif text-[14vw] leading-[0.82] tracking-[-0.04em] sm:text-7xl md:text-8xl lg:text-[100px]"
             >
@@ -243,7 +243,7 @@ export default function Portfolio() {
           viewport={{ once: true }}
           transition={{
             duration: 1,
-            ease: [0.22, 1, 0.36, 1],
+            ease: [0.22, 1, 0.36, 1] as const,
           }}
           className="mb-8 origin-left border-t border-[#d8d2c4]"
         />
@@ -366,7 +366,7 @@ export default function Portfolio() {
                   }}
                   transition={{
                     duration: 0.9,
-                    ease: [0.22, 1, 0.36, 1],
+                    ease: [0.22, 1, 0.36, 1] as const,
                   }}
                 >
                   <Image
