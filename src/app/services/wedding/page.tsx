@@ -8,22 +8,22 @@ import { ArrowUpRight, ChevronDown } from "lucide-react";
 
 const gallery = [
   {
-    src: "/portfolio/images/pre-wedding 1.jpg",
+    src: "/wedding/5.jpg",
     alt: "Wedding couple",
     size: "large",
   },
   {
-    src: "/portfolio/images/pre-wedding 2.jpg",
+    src: "/wedding/2.jpg",
     alt: "Wedding celebration",
     size: "small",
   },
   {
-    src: "/portfolio/images/pre-wedding 2.jpg",
+    src: "/wedding/3.jpg",
     alt: "Wedding portrait",
     size: "small",
   },
   {
-    src: "/portfolio/images/pre-wedding 2.jpg",
+    src: "/wedding/6.png",
     alt: "Wedding ceremony",
     size: "wide",
   },
@@ -144,7 +144,7 @@ export default function WeddingPage() {
           className="relative mx-auto aspect-[4/3] max-w-[1600px] overflow-hidden sm:aspect-[16/8]"
         >
           <Image
-            src="/portfolio/images/pre-wedding 1.jpg"
+            src="/wedding/1.jpg"
             alt="Wedding photography by Sonal Clicks"
             fill
             priority

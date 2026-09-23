@@ -7,22 +7,22 @@ import { m } from "framer-motion";
 
 const gallery = [
   {
-    src: "/portfolio/12.webp",
+    src: "/babyshoot/1.jpg",
     alt: "Baby photography by Sonal Clicks",
     size: "large",
   },
   {
-    src: "/portfolio/6.webp",
+    src: "/babyshoot/2.jpg",
     alt: "Baby portrait photography",
     size: "small",
   },
   {
-    src: "/portfolio/3.webp",
+    src: "/babyshoot/3.jpg",
     alt: "Beautiful baby moment",
     size: "small",
   },
   {
-    src: "/portfolio/5.webp",
+    src: "/babyshoot/5.jpg",
     alt: "Family and baby photography",
     size: "wide",
   },
@@ -117,7 +117,7 @@ export default function BabyShootPage() {
           className="relative mx-auto aspect-[4/3] max-w-[1600px] overflow-hidden sm:aspect-[16/8]"
         >
           <Image
-            src="/portfolio/12.webp"
+            src="/babyshoot/4.jpg"
             alt="Baby photography by Sonal Clicks"
             fill
             priority

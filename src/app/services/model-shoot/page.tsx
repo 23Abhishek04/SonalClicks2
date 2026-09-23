@@ -7,22 +7,22 @@ import { m } from "framer-motion";
 
 const gallery = [
   {
-    src: "/portfolio/10.webp",
+    src: "/modelshoot/1.jpg",
     alt: "Fashion model portrait by Sonal Clicks",
     size: "large",
   },
   {
-    src: "/portfolio/7.webp",
+    src: "/modelshoot/2.jpg",
     alt: "Editorial model portrait",
     size: "small",
   },
   {
-    src: "/portfolio/3.webp",
+    src: "/modelshoot/3.jpg",
     alt: "Creative fashion portrait",
     size: "small",
   },
   {
-    src: "/portfolio/5.webp",
+    src: "/modelshoot/5.jpg",
     alt: "Editorial fashion photography",
     size: "wide",
   },
@@ -116,7 +116,7 @@ export default function ModelShootPage() {
           className="relative mx-auto aspect-[4/3] max-w-[1600px] overflow-hidden sm:aspect-[16/8]"
         >
           <Image
-            src="/portfolio/10.webp"
+            src="/modelshoot/1.jpg"
             alt="Model photography by Sonal Clicks"
             fill
             priority

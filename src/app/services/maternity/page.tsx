@@ -7,22 +7,22 @@ import { m } from "framer-motion";
 
 const gallery = [
   {
-    src: "/portfolio/5.webp",
+    src: "/maternity/5.jpg",
     alt: "Maternity photography by Sonal Clicks",
     size: "large",
   },
   {
-    src: "/portfolio/3.webp",
+    src: "/maternity/2.jpg",
     alt: "Maternity portrait photography",
     size: "small",
   },
   {
-    src: "/portfolio/12.webp",
+    src: "/maternity/3.jpg",
     alt: "Motherhood photography",
     size: "small",
   },
   {
-    src: "/portfolio/7.webp",
+    src: "/maternity/4.jpg",
     alt: "Elegant maternity portrait",
     size: "wide",
   },
@@ -116,7 +116,7 @@ export default function MaternityPage() {
           className="relative mx-auto aspect-[4/3] max-w-[1600px] overflow-hidden sm:aspect-[16/8]"
         >
           <Image
-            src="/portfolio/5.webp"
+            src="/maternity/1.jpg"
             alt="Maternity photography by Sonal Clicks"
             fill
             priority

@@ -7,22 +7,22 @@ import { m } from "framer-motion";
 
 const gallery = [
   {
-    src: "../services/pre-wedding/pre-wedding-1.jpg",
+    src: "/prewedding/1.jpg",
     alt: "Pre-wedding couple portrait",
     size: "large",
   },
   {
-    src: "/services/pre-wedding/pre-wedding-2.jpg",
+    src: "/prewedding/2.jpg",
     alt: "Pre-wedding couple moment",
     size: "small",
   },
   {
-    src: "/services/pre-wedding/pre-wedding-3.jpg",
+    src: "/prewedding/3.jpg",
     alt: "Romantic pre-wedding portrait",
     size: "small",
   },
   {
-    src: "/services/pre-wedding/pre-wedding-4.jpg",
+    src: "/prewedding/4.jpg",
     alt: "Pre-wedding fashion portrait",
     size: "wide",
   },
@@ -116,7 +116,7 @@ export default function PreWeddingPage() {
           className="relative mx-auto aspect-[4/3] max-w-[1600px] overflow-hidden sm:aspect-[16/8]"
         >
           <Image
-            src="/services/pre-wedding/pre-wedding-4.jpg"
+            src="/prewedding/5.jpg"
             alt="Pre-wedding photography by Sonal Clicks"
             fill
             priority
